@@ -179,6 +179,7 @@
 
 .body .container .row .more-info span {
   color: var(--grey-600);
+  cursor: pointer;
 }
 
 .body .container .row .product__container {
