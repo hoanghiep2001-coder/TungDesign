@@ -5,10 +5,12 @@ $(function () {
             this.onSomething()
         },
         onSomething: function() {
+            this.clearFixSlickSlider()
             this.loadPage()
             this.productDropdown()
             this.loadingGif()
             this.productItem()
+            this.showPagination()
         },
         render: function () {
             this.renderProductItem()
@@ -48,25 +50,30 @@ $(function () {
                 image: '../Content/image/home/2.jpg',
                 name: 'Áp thấp',
             },
-            {
-                image: '../Content/image/home/1.jpg',
-                name: 'Áp cao',
-            },
-            {
-                image: '../Content/image/home/2.jpg',
-                name: 'Áp thấp',
-            },
-            {
-                image: '../Content/image/home/1.jpg',
-                name: 'Áp cao',
-            },
-            {
-                image: '../Content/image/home/2.jpg',
-                name: 'Áp thấp',
-            },
         ],
 
         // Function
+        renderProductItem: function () {
+            let _this = this;
+            let productList = _this.productArr.map(function (item, index) {
+              return `
+                    <div class="col-3">
+                    <div class="card-item">
+                        <div class="overflow-auto overflow-hidden">
+                            <img src="${item.image}" alt="">
+                        </div>
+                        
+                        <p>${item.name}</p>
+                    </div>
+                </div>
+                `;
+            });
+            $(".product__container").html(productList.join(""));
+        },
+
+        clearFixSlickSlider() {
+            $('.slick-track').trigger('click');
+        },
         productDropdown() {
             $('.dropdown-list').slideUp();
 
@@ -135,23 +142,24 @@ $(function () {
                 }, 2200)
             });
         },
-        renderProductItem: function () {
-            let _this = this;
-            let productList = _this.productArr.map(function (item, index) {
-              return `
-                    <div class="col-3 mt24">
-                    <div class="card-item">
-                        <div class="overflow-auto overflow-hidden">
-                            <img src="${item.image}" alt="">
-                        </div>
-                        
-                        <p>${item.name}</p>
-                    </div>
-                </div>
-                `;
-            });
-            $(".product__container").html(productList.join(""));
-          },
+        showPagination() {
+           $('.wrapper').click(function (e) { 
+               e.preventDefault();
+               let productRow = $('.product__container').hasClass('d-flex')
+               
+               setTimeout(function showPagination(){
+                if (productRow) {
+                    $('.js-pagination').addClass('d-flex');
+                    $('.js-pagination').removeClass('d-none');
+                } else {
+                    $('.js-pagination').removeClass('d-flex');
+                    $('.js-pagination').addClass('d-none');
+                }
+               }, 2200)
+               
+           });
+        },
+      
     }
 
     AsiaDevice.init()
