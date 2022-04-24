@@ -14,20 +14,101 @@
     <link rel="stylesheet" href="../Content/css/main.css">
     <link rel="stylesheet" href="../Content/css/common.css">
     <link rel="stylesheet" href="../Content/css/home.css">
+    <script src="../Content/plugin/jquery/jquery.js"></script>
+    <script src="../Content/plugin/jquery/ajax.js"></script>
 </head>
 
-<body>
+<body class="">
     <div class="wrapper">
         <div class="header">
             <div class="container">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="header__logo">
+                <div class="d-lg-flex align-items-center justify-content-between position-relative tablet-config">
+                    <div class="header__logo text-md-center">
                         <img src="../Content/image/home/logo.jpg" alt="">
                     </div>
-                    <h3 class="header__slogan">
+                    <div class="bar hide-on-pc position-absolute">
+                        <i class="bar-icon bi bi-text-left"></i>
+                        <!-- update 22/04 -->
+                        <div class="bar-container position-fixed">
+                            <div class="hide-bar">
+                                <div class="text-right">
+                                    <div class="bar-close">
+                                        <i class="bar-icon bi bi-text-right"></i>
+                                    </div>
+                                </div>
+                               
+                                <div class="bar-content">
+                                    <ul class="bar-list">
+                                        <li class="bar-list-item js-scroll-to-top">
+                                            TRANG CHỦ
+                                        </li>
+                                        <li class="bar-list-item d-flex justify-content-between align-items-center js-scroll-into-views bar-has-sublist">
+                                            <p>GIỚI THIỆU</p>
+                                            <i class="bi bi-arrow-down-circle"></i>
+                                        </li>
+                                        <ul class="sub-list ">
+                                            <li class="sub-list-item">
+                                                Thông điệp
+                                            </li>
+                                            <li class="sub-list-item">
+                                                Sơ đồ tổ chức
+                                            </li>
+                                            <li class="sub-list-item">
+                                                Văn hóa doanh nghiệp
+                                            </li>
+                                            <li class="sub-list-item">
+                                                Giá trị cốt lõi
+                                            </li>
+                                            <li class="sub-list-item">
+                                                Trách nhiệm xã hội
+                                            </li>
+                                        </ul>
+                                        <li class="bar-list-item d-flex justify-content-between align-items-center js-scroll-into-views bar-has-sublist">
+                                            <p>TIN TỨC</p>
+                                            <i class="bi bi-arrow-down-circle"></i>
+                                        </li>
+                                        <ul class="sub-list ">
+                                            <li class="sub-list-item">
+                                                Tin công ty
+                                            </li>
+                                            <li class="sub-list-item">
+                                                Tin việc làm
+                                            </li>
+                                        </ul>
+                                        <li class="bar-list-item d-flex justify-content-between align-items-center js-scroll-into-views">
+                                            <p>SẢN PHẨM</p>
+                                        </li>
+                                        <li class="bar-list-item d-flex justify-content-between align-items-center js-scroll-into-views">
+                                            <p>ĐẶT HÀNG</p>
+                                        </li>
+                                        <li class="bar-list-item d-flex justify-content-between align-items-center js-scroll-into-views bar-has-sublist">
+                                            <p>DỊCH VỤ</p>
+                                            <i class="bi bi-arrow-down-circle"></i>
+                                        </li>
+                                        <ul class="sub-list ">
+                                            <li class="sub-list-item">
+                                                Bảo hành và hậu mãi
+                                            </li>
+                                            <li class="sub-list-item">
+                                                Cam kết của ASIA
+                                            </li>
+                                            <li class="sub-list-item">
+                                                Lắp đặt và sửa chữa
+                                            </li>
+                                        </ul>
+                                        <li class="bar-list-item d-flex justify-content-between align-items-center js-scroll-into-views">
+                                            <a href="https://zalo.me/0942758868">LIÊN HỆ</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="header__slogan hide-on-mobile hide-on-tablet">
                         Công TY TNHH Sản Xuất Và Thương Mại Thiết Bị Điện Tĩnh Gia
                     </h3>
-                    <div class="header__language">
+                    <div class="header__language hide-on-mobile hide-on-tablet">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle shadow-none" type="button"
                                 id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
@@ -47,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-                <ul class="nav nav-tabs justify-content-center">
+                <ul class="nav nav-tabs justify-content-center hide-on-mobile hide-on-tablet">
                     <li class="nav-item">
                         <a class="nav-link active js-back-to-home" href="#">Trang chủ</a>
                     </li>
@@ -97,7 +178,7 @@
                 <!-- banner -->
                 <div id="carouselExampleControlsNoTouching" class="carousel slide" data-touch="false"
                     data-interval="false">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner mobile-carousel">
                         <div class="carousel-item active">
                             <img src="../Content/image/home/banner/0a3c326f-cedf-4cf9-ada2-71f7517d0a09.jpg"
                                 class="d-block w-100" alt="...">
@@ -114,7 +195,7 @@
                 <!-- // end banner -->
                 <div class="border-section"></div>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-12 col-md-3 col-lg-3">
                         <div class="row mt20">
                             <div class="col-12 col-item mb20">
                                 <div class="search-container position-relative">
@@ -131,13 +212,13 @@
                                             Bộ đổi nguồn và Van điện từ
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product "><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views "><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
                                         </ul>
                                         <a class="nav-link link-item fz-16 position-relative mt4" href="#">
@@ -145,13 +226,13 @@
                                             Đầu cos nối dây điện
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
                                         </ul>
                                         <a class="nav-link link-item fz-16 position-relative mt4" href="#">
@@ -159,13 +240,13 @@
                                             Gia công dây giắc điện
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
                                         </ul>
                                         <a class="nav-link link-item fz-16 position-relative mt4" href="#">
@@ -173,13 +254,13 @@
                                             Giắc nhựa kết nối
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
                                         </ul>
                                         <a class="nav-link link-item fz-16 position-relative mt4 mb4" href="#">
@@ -187,13 +268,13 @@
                                             Thiết bị máy gia công bộ dây điện
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
-                                            <li class="dropdown-list-item js-show-loading-gif js-show-product"><i class="bi bi-arrow-right-short"></i>abc
+                                            <li class="dropdown-list-item js-show-loading-gif js-show-product js-scroll-into-views"><i class="bi bi-arrow-right-short"></i>abc
                                             </li>
                                         </ul>
                                     </nav>
@@ -212,9 +293,9 @@
                                     <h3 class="fz-15 heading-section">Liên Hệ</h3>
                                     <div class="pad8 text-left d-flex flex-column fz-14">
                                         <p>Địa chỉ: số nhà 35 Thôn Ngõ Vật Con Thôn Phượng Vũ Xã Phượng Dực Huyện Phú xuyên TP Hà Nội</p>
-                                        <a href="tel: 84-4.36408544">Tel: 84 -4.36408544</a>   
-                                        <a href="tel: 0942758868">Hotile: 0942758868</a>  
-                                        <p>Email: thietbidienmaychaua@gmail.com</p>   
+                                        <a href="tel:84-4.36408544">Tel: 84 -4.36408544</a>   
+                                        <a href="tel:0942758868">Hotile: 0942758868</a>  
+                                        <p>Email: thietbidienmay<br class="hide-on-pc">chaua@gmail.com</p>   
                                     </div>
                                 </div>
                             </div>
@@ -222,23 +303,23 @@
                                 <div class="text-center card-item">
                                     <h3 class="fz-15 heading-section">Hỗ Trợ Trực Tuyến</h3>
                                     <div class="pad8 d-flex flex-column fz-14 text-left">
-                                        <a href="tel: 0948.016.588 ">Hotline: 0948.016.588</a>
-                                        <a href="tel: 0932312355">Mrs. Hương – 0932312355</a>
-                                        <a href="tel: 0919882098">Mr. Tùng – 0919882098</a>
-                                        <a href="tel:  0917510660">Mr. Đại  –  0917510660</a>
+                                        <a href="tel:0948016588 ">Hotline: 0948.016.588</a>
+                                        <a href="tel:0932312355">Mrs. Hương – 0932312355</a>
+                                        <a name="TungPhoneCall" href="tel:0919882098">Mr. Tùng – 0919882098</a>
+                                        <a href="tel:0917510660">Mr. Đại  –  0917510660</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-12 col-md-9 col-lg-9 js-scroll-destination">
                         <div class="container z-idx-100 mt20">
                             <div class="overflow-auto loading-bahavior overflow-hidden text-center mt48">
                                 <img width="420" height="140" src="../Content/image/home/gif/loading-animations-preloader-gifs-ui-ux-effects-10.gif" alt="">
                             </div>
                         </div>
                         <div class="row js-loading-content">
-                            <div class="col-6">
+                            <div class="col-12 col-lg-6">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="overflow-auto overflow-hidden">
@@ -269,8 +350,8 @@
                                         </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="row mobile-mt-16 tablet-mt-16">
                                     <div class="col-12">
                                         <div class="overflow-auto overflow-hidden">
                                             <img src="../Content/image/home/2.jpg" alt="">
@@ -310,6 +391,7 @@
                           </nav>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="footer">
@@ -321,14 +403,22 @@
             </div>
            
         </div>
+
+        <!-- Modal -->
+        <div class="modal js-modal">
+            <div class="modal__overlay">
+
+            </div>
+            <div class="modal__body js-modal-body">
+               
+            </div>
+        </div>
+
         <!-- scroll to top -->
         <div class="container position-fixed scroll-top-behavior z-idx-10000">
             <i class="bi bi-arrow-bar-up fz-20 scroll-top-icon"></i>
         </div>
     </div>
-
-    <script src="../Content/plugin/jquery/jquery.js"></script>
-    <script src="../Content/plugin/jquery/ajax.js"></script>
     <script src="../Content/plugin/jquery/migrate.js"></script>
     <script src="../Content/plugin/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../Content/plugin/slick-master/slick/slick.js"></script>
