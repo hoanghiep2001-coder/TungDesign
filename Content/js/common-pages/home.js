@@ -11,6 +11,10 @@ $(function () {
             this.loadingGif()
             this.productItem()
             this.showPagination()
+
+            this.showNavBar()
+            this.scrollToElement()
+            this.mobileProductDropdown()
         },
         render: function () {
             this.renderProductItem()
@@ -57,7 +61,7 @@ $(function () {
             let _this = this;
             let productList = _this.productArr.map(function (item, index) {
               return `
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-4 col-6 ">
                     <div class="card-item">
                         <div class="overflow-auto overflow-hidden">
                             <img src="${item.image}" alt="">
@@ -159,6 +163,111 @@ $(function () {
                
            });
         },
+
+        // Mobile
+        showNavBar() {
+            $('.header .bar').click(function (e) { 
+                e.stopPropagation();
+                $('.header .bar-container').css({
+                    "width": "250px",
+                    "visibility": "visible",
+                 });
+
+                 $('.header .hide-bar').css({
+                    "visibility": "visible",
+                 });
+
+                 $('#myModal').modal('show')
+                 setTimeout(function showNav() {
+                    $('.header .bar-list').css({
+                        "visibility": "visible",
+                       });
+                 }, 200)
+                
+            });
+
+            $('.header .bar-close').click(function (e) { 
+                e.stopPropagation();
+                $('.header .bar-container').css({
+                    "visibility": "hidden",
+                    "width": "0",
+                 });
+
+                 $('.header .hide-bar').css({
+                    "visibility": "hidden",
+                 });
+                 $('.header .bar-list').css({
+                    "visibility": "hidden",
+                   });
+            });
+
+            $('html').click(function (e) { 
+                e.preventDefault();
+                $('.header .bar-container').css({
+                    "visibility": "hidden",
+                    "width": "0",
+                 });
+
+                 $('.header .hide-bar').css({
+                    "visibility": "hidden",
+                 });
+                 $('.header .bar-list').css({
+                    "visibility": "hidden",
+                   });
+            });
+        },
+        mobileProductDropdown() {
+            $('.sub-list').slideUp();
+
+            $('.bar-has-sublist').click(function (e) { 
+                e.preventDefault();
+                let $this = $(this)
+                let $dropdown = $this.next()
+                let $arrowIcon = $this.find('.bi-arrow-down-circle')
+                
+                $($dropdown).slideToggle();
+                $($arrowIcon).css({
+                    "transform":"rotate(180deg)"
+                });
+
+                $('.bi-arrow-down-circle').not($arrowIcon).css({
+                    "transform":"rotate(360deg)"
+                });
+                $('.sub-list').not($dropdown).slideUp();
+            });
+        },
+        scrollToElement: function () {
+            $(document).on("click", ".js-scroll-into-views", function (e) {
+              e.preventDefault();
+              console.log('clicked')
+              $("html, body").animate(
+                {
+                  scrollTop: $(".js-scroll-destination").offset().top,
+                },
+                1500
+              );
+
+              $('.header .bar-close').trigger('click');
+              $('.header .bar-list').css({
+                  "visibility": "hidden",
+                });
+            });
+      
+            // $(document).on('click', '.towards', function (e) {
+            //   e.stopPropagation();
+            //   let $this = $(this)
+            //   let $flyway = $this.find('.fly-way')
+      
+            //   if($($flyway).hasClass('active')) {
+            //     $("html, body").animate(
+            //       {
+            //         scrollTop: $("#form-list-2").offset().top,
+            //       },
+            //       1000
+            //     );
+            //   }
+            // })
+          },
       
     }
 
