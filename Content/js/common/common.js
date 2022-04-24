@@ -395,6 +395,19 @@ var Home = (function () {
           jQuery("html, body").animate({ scrollTop: 0 }, duration);
           return false;
         });
+
+        jQuery(".js-scroll-to-top").click(function (event) {
+  
+          // THời gian di trượt là 0.5 giây
+          var duration = 500;
+  
+          // Thêm vào sự kiện scroll của window, nghĩa là lúc trượt sẽ
+          // kiểm tra sự ẩn hiện của button
+  
+          event.preventDefault();
+          jQuery("html, body").animate({ scrollTop: 0 }, duration);
+          return false;
+        });
       },
       slickSlider: function() {
         $('.carousel-inner').slick({
